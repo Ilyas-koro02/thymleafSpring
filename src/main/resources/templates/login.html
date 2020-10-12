@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Test Login</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/metisMenu.min.css" rel="stylesheet">
+        <link href="/css/startmin.css" rel="stylesheet">
+        <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Please Sign In</h3>
+                        </div>
+                        <div class="panel-heading" style="background-color: darkred!important; color: #ffffff!important;" th:if="${errorLogin == 'error'}">
+                            <h3 class="panel-title" th:text="${errorLogin}"></h3>
+                        </div>
+                        <div class="panel-body">
+                            <form action="#" th:action="@{/login}" th:object="${admin}" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Login"  type="text" autofocus th:field="*{login}">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Password" type="password" th:field="*{passwordAdmin}">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                        </label>
+                                    </div>
+                                    <button class="btn btn-lg btn-success btn-block">Login</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/metisMenu.min.js"></script>
+        <script src="/js/startmin.js"></script>
+    </body>
+</html>
