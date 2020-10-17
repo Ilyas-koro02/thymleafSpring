@@ -87,7 +87,7 @@ public class MainController {
             model.addAttribute("users123", Optional.ofNullable(users).orElseGet(ArrayList::new));
             return "/index";
         }else {
-            return "redirect:/error";
+            return "redirect:/login";
         }
     }
 }
